@@ -1,18 +1,21 @@
 {
-  "name": "apple-health-mcp",
+  "name": "health-mcp",
   "version": "1.0.0",
-  "description": "MCP server that loads Apple Health export data into Claude",
+  "description": "MCP servers for Apple Health and Strava data in Claude",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "apple-health-mcp": "dist/index.js"
+    "apple-health-mcp": "dist/index.js",
+    "strava-mcp": "dist/strava.js",
+    "strava-setup": "dist/strava-setup.js"
   },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsc && node dist/index.js"
+    "start:health": "node dist/index.js",
+    "start:strava": "node dist/strava.js",
+    "setup:strava": "node dist/strava-setup.js"
   },
-  "keywords": ["mcp", "apple-health", "claude"],
+  "keywords": ["mcp", "apple-health", "strava", "claude"],
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
